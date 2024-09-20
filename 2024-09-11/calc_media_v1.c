@@ -1,14 +1,12 @@
-/*
-   Comentário bloco
- */
-// comentário de linha
-#include <stdio.h>
 /**
  * Programa para determinar a nota final através do cálculo da média 
  * entre a nota teorica e a nota prática 
  * 
- * Nesta versão é validado se as notas lidas se encontram no intervalo [0..20]
+ * Nesta versão é validado se as notas lidas se encontram no 
+ * intervalo [0..20]
  */
+#include <stdio.h>
+
 int main ()
 {
     // 1. Ler Nota Teórica

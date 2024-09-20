@@ -1,10 +1,16 @@
-
-/*
-   Comentário bloco
+/**
+ * Programa para determinar a nota final através do cálculo da média 
+ * entre a nota teorica e a nota prática 
+ * 
+ * Nesta versão é validado se as notas lidas se encontram no intervalo [0..20]
+ * e em caso de valor fora deste intervalo volta a ler novo valor.
+ * Para suportar esta leitura foi escrita a função  read_int_in_range
  */
-// comentário de linha
 #include <stdio.h>
 #include <stdbool.h>
+
+#define HIGHER_GRADE    20
+#define LOWER_GRADE       0
 
 int read_int_in_range (int lower, int higher)
 {
@@ -16,10 +22,9 @@ int read_int_in_range (int lower, int higher)
         if (value < lower || value > higher) {
             printf("valor errado\n"); 
         }
-        else 
-            break;
-//    } while (nota_teorica < 0 || nota_teorica > 20);
-    } while (true);
+
+    } while (value < lower || value > higher);
+
     return value;
 }
 
@@ -27,11 +32,11 @@ int main ()
 {
     // 1. Ler Nota Teórica
     printf("Leitura nota teórica:\n");
-    int nota_teorica = read_int_in_range(0, 20);
+    int nota_teorica = read_int_in_range(LOWER_GRADE, HIGHER_GRADE);
 
     // 2. Ler Nota prática
     printf("Leitura nota prática:\n");
-    int nota_pratica = read_int_in_range(0, 20);
+    int nota_pratica = read_int_in_range(LOWER_GRADE, HIGHER_GRADE);
     
     // 3. Calcular a média
     float media;
